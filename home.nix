@@ -554,6 +554,7 @@
           "browser.urlbar.suggest.topsites" = false;
           "browser.urlbar.suggest.trending" = false;
           "privacy.globalprivacycontrol.enabled" = true;
+          "ui.key.menuAccessKeyFocuses" = false;
         };
         extensions = {
           packages = with pkgs.nur.repos.rycee.firefox-addons; [
