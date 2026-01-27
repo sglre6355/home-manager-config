@@ -554,7 +554,7 @@
       SanitizeOnShutdown = {
         FormData = true;
       };
-      SearchSuggestEnabled = true;
+      SearchSuggestEnabled = false;
       UserMessaging = {
         FeatureRecommendations = false;
         SkipOnboarding = true;
@@ -570,6 +570,7 @@
           "browser.urlbar.suggest.openpage" = false;
           "browser.urlbar.suggest.quickactions" = false;
           "browser.urlbar.suggest.quicksuggest.all" = false;
+          "browser.urlbar.suggest.history" = true;
           "browser.urlbar.suggest.topsites" = false;
           "browser.urlbar.suggest.trending" = false;
           "privacy.globalprivacycontrol.enabled" = true;
