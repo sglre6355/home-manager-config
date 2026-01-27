@@ -244,7 +244,10 @@
           };
         };
       };
+      diffview.enable = true;
       fidget.enable = true;
+      git-conflict.enable = true;
+      gitsigns.enable = true;
       indent-blankline.enable = true;
       lsp = {
         enable = true;
