@@ -249,7 +249,7 @@
       lsp = {
         enable = true;
         autoload = true;
-        inlayHints = true;
+        inlayHints = false;
         servers = {
           gopls.enable = true;
           nixd.enable = true;
