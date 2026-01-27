@@ -125,7 +125,6 @@
       markdownlint-cli2
       nix
       python313Packages.flake8
-      actionlint
     ];
 
     opts = {
@@ -271,7 +270,6 @@
           markdown = [ "markdownlint-cli2" ];
           nix = [ "nix" ];
           python = [ "flake8" ];
-          yaml = [ "actionlint" ];
         };
       };
       lualine.enable = true;
