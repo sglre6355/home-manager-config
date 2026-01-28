@@ -37,6 +37,7 @@
     btop
     claude-code
     codex
+    devenv
     file
     gcc
     tealdeer
@@ -618,4 +619,9 @@
   };
 
   programs.discord.enable = true;
+
+  programs.direnv = {
+    enable = true;
+    enableZshIntegration = true;
+  };
 }
