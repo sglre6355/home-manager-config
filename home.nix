@@ -116,6 +116,12 @@
     ];
   };
 
+  programs.tmux = {
+    enable = true;
+    keyMode = "vi";
+    mouse = true;
+  };
+
   programs.nixvim =
     { lib, ... }:
     {
