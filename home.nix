@@ -475,6 +475,13 @@
     ];
   };
 
+  services.mako = {
+    enable = true;
+    settings = {
+      default-timeout = 5000;
+    };
+  };
+
   programs.wezterm = {
     enable = true;
     enableZshIntegration = true;
