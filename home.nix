@@ -263,7 +263,10 @@
           autoload = true;
           inlayHints = false;
           servers = {
-            gopls.enable = true;
+            gopls = {
+              enable = true;
+              packageFallback = true;
+            };
             nixd.enable = true;
             rust_analyzer = {
               enable = true;
