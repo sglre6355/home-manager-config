@@ -489,6 +489,10 @@
         "--locked XF86AudioMicMute" =
           "exec ${pkgs.pulseaudio}/bin/pactl set-source-mute @DEFAULT_SOURCE@ toggle";
 
+        "--locked XF86AudioPlay" = "exec ${pkgs.playerctl}/bin/playerctl play-pause";
+        "--locked XF86AudioNext" = "exec ${pkgs.playerctl}/bin/playerctl next";
+        "--locked XF86AudioPrev" = "exec ${pkgs.playerctl}/bin/playerctl previous";
+
         "--locked XF86MonBrightnessUp" = "exec ${pkgs.brightnessctl}/bin/brightnessctl set 10%+";
         "--locked XF86MonBrightnessDown" = "exec ${pkgs.brightnessctl}/bin/brightnessctl set 10%-";
         "--locked XF86MonBrightnessUp+Shift" = "exec ${pkgs.brightnessctl}/bin/brightnessctl set 5%+";
