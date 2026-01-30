@@ -521,27 +521,37 @@
     };
   };
 
-  services.swayidle = {
-    enable = true;
-    events = {
-      after-resume = ''${pkgs.sway}/bin/swaymsg "output * power on"'';
-      before-sleep = "${pkgs.swaylock}/bin/swaylock -f";
+  services.swayidle =
+    let
+      lock = "${pkgs.swaylock}/bin/swaylock -f";
+      display = status: "${pkgs.sway}/bin/swaymsg 'output * power ${status}'";
+    in
+    {
+      enable = true;
+      timeouts = [
+        {
+          timeout = 170;
+          command = "${pkgs.libnotify}/bin/notify-send 'Locking in 10 seconds' -t 10000";
+        }
+        {
+          timeout = 180;
+          command = lock;
+        }
+        {
+          timeout = 300;
+          command = display "off";
+          resumeCommand = display "on";
+        }
+        {
+          timeout = 900;
+          command = "${pkgs.systemd}/bin/systemctl suspend";
+        }
+      ];
+      events = {
+        before-sleep = (display "off") + "; " + lock;
+        after-resume = display "on";
+      };
     };
-    timeouts = [
-      {
-        timeout = 180;
-        command = "${pkgs.swaylock}/bin/swaylock -f";
-      }
-      {
-        timeout = 300;
-        command = ''${pkgs.sway}/bin/swaymsg "output * power off"'';
-      }
-      {
-        timeout = 900;
-        command = "${pkgs.systemd}/bin/systemctl suspend";
-      }
-    ];
-  };
 
   services.mako = {
     enable = true;
