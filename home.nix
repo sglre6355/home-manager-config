@@ -354,6 +354,11 @@
     ];
   };
 
+  programs.direnv = {
+    enable = true;
+    enableZshIntegration = true;
+  };
+
   services.gpg-agent = {
     enable = true;
     enableZshIntegration = true;
@@ -628,9 +633,4 @@
   };
 
   programs.discord.enable = true;
-
-  programs.direnv = {
-    enable = true;
-    enableZshIntegration = true;
-  };
 }
