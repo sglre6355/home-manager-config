@@ -639,4 +639,6 @@
   };
 
   programs.discord.enable = true;
+
+  programs.obs-studio.enable = true;
 }
