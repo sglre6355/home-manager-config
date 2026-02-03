@@ -105,6 +105,10 @@
   programs.zsh = {
     enable = true;
     enableCompletion = true;
+    initContent = ''
+      autoload -Uz select-word-style
+      select-word-style bash
+    '';
     syntaxHighlighting.enable = true;
   };
 
