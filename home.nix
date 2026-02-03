@@ -743,6 +743,7 @@
   };
 
   systemd.user.services.easyeffects.Service.ExecStartPost = [
+    "${pkgs.coreutils}/bin/sleep 5"
     "${config.services.easyeffects.package}/bin/easyeffects --load-preset ${config.services.easyeffects.preset}"
   ];
 
