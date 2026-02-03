@@ -513,6 +513,56 @@
 
   programs.wofi.enable = true;
 
+  programs.i3status = {
+    enable = true;
+    enableDefault = false;
+
+    modules = {
+      "ethernet _first_" = {
+        enable = true;
+        position = 0;
+      };
+      "wireless _first_" = {
+        enable = true;
+        position = 1;
+      };
+      "volume master" = {
+        enable = true;
+        position = 2;
+        settings = {
+          format = "V: %volume";
+          format_muted = "V: muted (%volume)";
+          device = "default";
+          mixer = "Master";
+          mixer_idx = 0;
+        };
+      };
+      "battery all" = {
+        position = 3;
+        enable = true;
+        settings = {
+          format = "%status %percentage %remaining";
+          format_down = "No battery";
+          status_chr = "CHR";
+          status_bat = "BAT";
+          status_unk = "UNKNOWN";
+          status_full = "FULL";
+          status_idle = "IDLE";
+          low_threshold = 15;
+          threshold_type = "percentage";
+          last_full_capacity = true;
+        };
+      };
+      "tztime local" = {
+        enable = true;
+        position = 4;
+        settings = {
+          format = "%Y-%m-%d %H:%M:%S";
+        };
+      };
+    };
+  };
+
   programs.swaylock = {
     enable = true;
     settings = {
