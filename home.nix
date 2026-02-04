@@ -352,6 +352,29 @@
           };
           commit = {
             gpgSign = true;
+            verbose = true;
+          };
+          init = {
+            defaultBranch = "main";
+          };
+          branch = {
+            sort = "-committerdate";
+          };
+          tag = {
+            sort = "version:refname";
+          };
+          diff = {
+            algorithm = "histogram";
+            colorMoved = "plain";
+            mnemonicPrefix = true;
+            renames = true;
+          };
+          push = {
+            followTags = true;
+            autoSetupRemote = true;
+          };
+          pull = {
+            rebase = true;
           };
         };
       }
