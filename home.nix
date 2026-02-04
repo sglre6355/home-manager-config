@@ -116,6 +116,9 @@
     enable = true;
     enableZshIntegration = true;
     settings = lib.mkMerge [
+      {
+        gcloud.disabled = true;
+      }
       (fromTOML (builtins.readFile "${pkgs.starship}/share/starship/presets/bracketed-segments.toml"))
     ];
   };
