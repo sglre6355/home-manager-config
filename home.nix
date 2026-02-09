@@ -131,6 +131,10 @@
     {
       enable = true;
 
+      dependencies = {
+        go.packageFallback = true;
+      };
+
       extraPackages = with pkgs; [
         hadolint
         commitlint
