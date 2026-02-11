@@ -671,6 +671,7 @@
       return {
         automatically_reload_config = true,
         enable_tab_bar = false,
+        enable_kitty_keyboard = true,
         keys = {
           {
             key = 'LeftArrow',
