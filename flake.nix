@@ -4,6 +4,7 @@
   inputs = {
     # Specify the source of Home Manager and Nixpkgs.
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-master.url = "github:nixos/nixpkgs/master";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -15,6 +16,7 @@
   outputs =
     {
       nixpkgs,
+      nixpkgs-master,
       home-manager,
       nur,
       nixvim,
@@ -29,6 +31,10 @@
           nur.overlays.default
         ];
       };
+      masterPkgs = import nixpkgs-master {
+        inherit system;
+        config.allowUnfree = true;
+      };
     in
     {
       homeConfigurations."sglre6355" = home-manager.lib.homeManagerConfiguration {
@@ -41,8 +47,9 @@
           nixvim.homeModules.nixvim
         ];
 
-        # Optionally use extraSpecialArgs
-        # to pass through arguments to home.nix
+        extraSpecialArgs = {
+          inherit masterPkgs;
+        };
       };
     };
 }
