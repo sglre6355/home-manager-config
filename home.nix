@@ -392,6 +392,7 @@
 
   programs.claude-code = {
     enable = true;
+    package = masterPkgs.claude-code;
     settings = {
       hooks = {
         Notification = [
