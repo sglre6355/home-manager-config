@@ -44,6 +44,7 @@
         # the path to your home.nix.
         modules = [
           ./home.nix
+          ./work.nix
           nixvim.homeModules.nixvim
         ];
 
