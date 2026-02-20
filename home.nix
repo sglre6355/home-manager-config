@@ -240,7 +240,17 @@
           autoInstall.enable = true;
           settings = {
             notify_on_error = true;
+            formatters = {
+              typstyle = {
+                append_args = [
+                  "--line-width"
+                  "120"
+                  "--wrap-text"
+                ];
+              };
+            };
             formatters_by_ft = {
+              cpp = [ "clang-format" ];
               go = [ "golangci-lint" ];
               html = [ "prettierd" ];
               javascript = [ "prettierd" ];
@@ -271,6 +281,7 @@
           autoload = true;
           inlayHints = false;
           servers = {
+            clangd.enable = true;
             gopls = {
               enable = true;
               packageFallback = true;
@@ -293,6 +304,8 @@
                 };
               };
             };
+            tinymist.enable = true;
+            ty.enable = true;
           };
         };
         lint = {
