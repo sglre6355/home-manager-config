@@ -401,6 +401,13 @@
     ];
   };
 
+  programs.gh = {
+    enable = true;
+    gitCredentialHelper = {
+      enable = true;
+    };
+  };
+
   programs.direnv = {
     enable = true;
     enableZshIntegration = true;
