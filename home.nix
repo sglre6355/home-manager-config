@@ -363,6 +363,9 @@
     includes = [
       {
         contents = {
+          core = {
+            editor = "nvim";
+          };
           user = {
             email = "sglre6355@gmail.com";
             name = "sglre6355";
