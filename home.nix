@@ -433,17 +433,29 @@
     pinentry.package = pkgs.pinentry-curses;
   };
 
-  xdg.userDirs = {
-    enable = true;
-    createDirectories = false;
-    desktop = "${config.home.homeDirectory}/desktop";
-    documents = "${config.home.homeDirectory}/documents";
-    download = "${config.home.homeDirectory}/downloads";
-    music = "${config.home.homeDirectory}/music";
-    pictures = "${config.home.homeDirectory}/pictures";
-    publicShare = "${config.home.homeDirectory}/public";
-    templates = "${config.home.homeDirectory}/templates";
-    videos = "${config.home.homeDirectory}/videos";
+  xdg = {
+    mimeApps = {
+      enable = true;
+      defaultApplications = {
+        "text/html" = [ "firefox.desktop" ];
+        "x-scheme-handler/http" = [ "firefox.desktop" ];
+        "x-scheme-handler/https" = [ "firefox.desktop" ];
+        "x-scheme-handler/about" = [ "firefox.desktop" ];
+        "x-scheme-handler/unknown" = [ "firefox.desktop" ];
+      };
+    };
+    userDirs = {
+      enable = true;
+      createDirectories = false;
+      desktop = "${config.home.homeDirectory}/desktop";
+      documents = "${config.home.homeDirectory}/documents";
+      download = "${config.home.homeDirectory}/downloads";
+      music = "${config.home.homeDirectory}/music";
+      pictures = "${config.home.homeDirectory}/pictures";
+      publicShare = "${config.home.homeDirectory}/public";
+      templates = "${config.home.homeDirectory}/templates";
+      videos = "${config.home.homeDirectory}/videos";
+    };
   };
 
   gtk = {
