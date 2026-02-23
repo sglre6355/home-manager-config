@@ -45,5 +45,19 @@
           };
         };
       };
+      homeConfigurations = {
+        SGR-PCPB01 = home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
+
+          modules = [
+            ./hosts/sgr-pcpb01.nix
+            nixvim.homeModules.nixvim
+          ];
+
+          extraSpecialArgs = {
+            inherit masterPkgs;
+          };
+        };
+      };
     };
 }
