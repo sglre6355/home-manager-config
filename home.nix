@@ -522,6 +522,13 @@
       modifier = "Mod4";
       terminal = "wezterm";
       menu = "wofi --show drun -D key_expand=Tab";
+      input = {
+        "type:touchpad" = {
+          tap = "enabled";
+          natural_scroll = "enabled";
+          middle_emulation = "enabled";
+        };
+      };
       output = {
         "*" = {
           bg = "#4e4e4e solid_color";
