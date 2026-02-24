@@ -19,11 +19,6 @@
       AutofillAddressEnabled = false;
       AutofillCreditCardEnabled = false;
       DisableTelemetry = true;
-      DNSOverHTTPS = {
-        Enabled = true;
-        ProviderURL = "https://mozilla.cloudflare-dns.com/dns-query";
-        Fallback = false;
-      };
       EnableTrackingProtection = {
         Value = true;
         Category = "strict";
