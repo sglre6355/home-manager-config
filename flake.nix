@@ -1,15 +1,13 @@
 {
-  description = "Home Manager configuration of sglre6355";
+  description = "sglre6355's Home Manager configuration";
 
   inputs = {
-    # Specify the source of Home Manager and Nixpkgs.
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixpkgs-master.url = "github:nixos/nixpkgs/master";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nur.url = "github:nix-community/NUR";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs-master.url = "github:NixOS/nixpkgs/master";
     nixvim.url = "github:nix-community/nixvim";
   };
 
@@ -18,7 +16,6 @@
       nixpkgs,
       nixpkgs-master,
       home-manager,
-      nur,
       nixvim,
       ...
     }:
@@ -27,9 +24,6 @@
       pkgs = import nixpkgs {
         inherit system;
         config.allowUnfree = true;
-        overlays = [
-          nur.overlays.default
-        ];
       };
       masterPkgs = import nixpkgs-master {
         inherit system;
@@ -37,19 +31,18 @@
       };
     in
     {
-      homeConfigurations."sglre6355" = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
+      homeConfigurations = {
+        SGR-PCPA02 = home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
 
-        # Specify your home configuration modules here, for example,
-        # the path to your home.nix.
-        modules = [
-          ./home.nix
-          ./work.nix
-          nixvim.homeModules.nixvim
-        ];
+          modules = [
+            ./hosts/sgr-pcpa02.nix
+            nixvim.homeModules.nixvim
+          ];
 
-        extraSpecialArgs = {
-          inherit masterPkgs;
+          extraSpecialArgs = {
+            inherit masterPkgs;
+          };
         };
       };
     };
