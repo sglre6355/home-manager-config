@@ -12,6 +12,7 @@
     ../modules/development/claude-code.nix
     ../modules/development/devenv.nix
     ../modules/development/kubernetes.nix
+    ../modules/development/podman.nix
 
     ../modules/desktop
     ../modules/applications/easyeffects.nix
