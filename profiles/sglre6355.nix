@@ -26,6 +26,7 @@
     btop
 
     ffmpeg
+    gimp
     imagemagick
 
     google-cloud-sdk
