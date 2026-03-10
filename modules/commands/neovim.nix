@@ -197,6 +197,16 @@
         };
         lint = {
           enable = true;
+          linters = {
+            flake8.args = [
+              "--format=%(path)s:%(row)d:%(col)d:%(code)s:%(text)s"
+              "--no-show-source"
+              "--stdin-display-name"
+              "--max-line-length=120"
+              (lib.nixvim.mkRaw "function() return vim.api.nvim_buf_get_name(0) end")
+              "-"
+            ];
+          };
           lintersByFt = {
             dockerfile = [ "hadolint" ];
             gitcommit = [ "commitlint" ];
