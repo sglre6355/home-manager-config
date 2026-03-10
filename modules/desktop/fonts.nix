@@ -4,6 +4,8 @@
 }:
 {
   home.packages = with pkgs; [
+    fira-sans
+    font-awesome
     nerd-fonts.fira-code
     nerd-fonts.fira-mono
     nerd-fonts.jetbrains-mono
