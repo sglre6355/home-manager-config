@@ -7,6 +7,7 @@
     { lib, ... }:
     {
       enable = true;
+      package = pkgs.neovim;
 
       dependencies = {
         go.packageFallback = true;
@@ -49,6 +50,12 @@
         shiftwidth = 4;
         expandtab = true;
         smartindent = false;
+
+        foldenable = true;
+        foldcolumn = "1";
+        foldlevel = 99;
+        foldlevelstart = 99;
+        fillchars = "eob: ,fold: ,foldopen:,foldsep: ,foldinner: ,foldclose:";
       };
 
       diagnostic.settings = {
@@ -218,14 +225,25 @@
         };
         lualine.enable = true;
         luasnip.enable = true;
+        nvim-ufo = {
+          enable = true;
+          settings = {
+            provider_selector = lib.nixvim.mkRaw ''
+              function(bufnr, filetype, buftype)
+                return {"treesitter", "indent"}
+              end
+            '';
+          };
+        };
         notify.enable = true;
         telescope.enable = true;
         treesitter = {
           enable = true;
+          highlight.enable = true;
+          indent.enable = true;
+          folding.enable = true;
           settings = {
-            highlight.enable = true;
             autotag.enable = true;
-            indent.enable = true;
           };
         };
         todo-comments = {
