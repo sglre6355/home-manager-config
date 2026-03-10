@@ -63,6 +63,7 @@
           "browser.urlbar.suggest.history" = true;
           "browser.urlbar.suggest.topsites" = false;
           "browser.urlbar.suggest.trending" = false;
+          "full-screen-api.warning.timeout" = 0;
           "privacy.globalprivacycontrol.enabled" = true;
           "ui.key.menuAccessKeyFocuses" = false;
         };
