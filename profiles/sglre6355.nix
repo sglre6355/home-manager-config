@@ -1,4 +1,5 @@
 {
+  config,
   lib,
   pkgs,
   ...
@@ -21,6 +22,8 @@
 
   home.username = lib.mkDefault "sglre6355";
   home.homeDirectory = lib.mkDefault "/home/sglre6355";
+
+  home.sessionPath = [ "${config.home.homeDirectory}/.local/bin" ];
 
   home.packages = with pkgs; [
     btop
