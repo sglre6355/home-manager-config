@@ -7,6 +7,10 @@
   programs.zsh = {
     enable = true;
     enableCompletion = true;
+    history = {
+      size = 10000000;
+      ignoreAllDups = true;
+    };
     initContent = ''
       autoload -Uz select-word-style
       select-word-style bash
