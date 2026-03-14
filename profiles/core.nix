@@ -22,6 +22,7 @@
   home.packages = with pkgs; [
     file
     jq
+    ripgrep
     tealdeer
     tree
 
