@@ -1,4 +1,5 @@
 {
+  pkgs,
   ...
 }:
 {
@@ -8,6 +9,10 @@
   ];
 
   home.stateVersion = "26.05";
+
+  home.packages = with pkgs; [
+    prismlauncher
+  ];
 
   wayland.windowManager.sway.config = {
     output = {
