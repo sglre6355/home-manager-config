@@ -25,6 +25,7 @@
           }
         ];
       };
+      includeCoAuthoredBy = false;
     };
   };
 }
