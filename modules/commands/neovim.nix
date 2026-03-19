@@ -17,7 +17,7 @@
         hadolint
         commitlint
         golangci-lint
-        markdownlint-cli2
+        rumdl
         nix
         python313Packages.flake8
       ];
@@ -149,7 +149,7 @@
               html = [ "prettierd" ];
               javascript = [ "prettierd" ];
               lua = [ "stylua" ];
-              markdown = [ "markdownlint" ];
+              markdown = [ "rumdl" ];
               nix = [ "nixfmt" ];
               protobuf = [ "buf" ];
               python = [
@@ -218,7 +218,7 @@
             dockerfile = [ "hadolint" ];
             gitcommit = [ "commitlint" ];
             go = [ "golangcilint" ];
-            markdown = [ "markdownlint-cli2" ];
+            markdown = [ "rumdl" ];
             nix = [ "nix" ];
             python = [ "flake8" ];
           };
