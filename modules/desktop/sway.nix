@@ -36,17 +36,7 @@
       };
       bars = [
         {
-          position = "top";
-          statusCommand = "${pkgs.i3status}/bin/i3status";
-          colors = {
-            background = "#323232";
-            statusline = "#ffffff";
-            inactiveWorkspace = {
-              border = "#323232";
-              background = "#323232";
-              text = "#5c5c5c";
-            };
-          };
+          command = "${pkgs.waybar}/bin/waybar";
         }
       ];
       focus.wrapping = "workspace";
@@ -97,54 +87,163 @@
 
   programs.wofi.enable = true;
 
-  programs.i3status = {
+  programs.waybar = {
     enable = true;
-    enableDefault = false;
 
-    modules = {
-      "ethernet _first_" = {
-        enable = true;
-        position = 0;
-      };
-      "wireless _first_" = {
-        enable = true;
-        position = 1;
-      };
-      "volume master" = {
-        enable = true;
-        position = 2;
-        settings = {
-          format = "V: %volume";
-          format_muted = "V: muted (%volume)";
-          device = "default";
-          mixer = "Master";
-          mixer_idx = 0;
+    settings = [
+      {
+        layer = "top";
+        position = "top";
+
+        modules-left = [
+          "sway/workspaces"
+        ];
+
+        modules-right = [
+          "network"
+          "custom/separator"
+          "wireplumber"
+          "custom/separator"
+          "battery"
+          "custom/no_battery_indicator"
+          "custom/separator"
+          "clock"
+          "custom/separator"
+          "idle_inhibitor"
+          "tray"
+        ];
+
+        "custom/separator" = {
+          format = "┃";
+          tooltip = false;
         };
-      };
-      "battery all" = {
-        position = 3;
-        enable = true;
-        settings = {
-          format = "%status %percentage %remaining";
-          format_down = "No battery";
-          status_chr = "CHR";
-          status_bat = "BAT";
-          status_unk = "UNKNOWN";
-          status_full = "FULL";
-          status_idle = "IDLE";
-          low_threshold = 15;
-          threshold_type = "percentage";
-          last_full_capacity = true;
+
+        "custom/no_battery_indicator" = {
+          exec = ''
+            ls /sys/class/power_supply/BAT* >/dev/null 2>&1 || echo "No battery"
+          '';
+          format = "{}";
         };
-      };
-      "tztime local" = {
-        enable = true;
-        position = 4;
-        settings = {
-          format = "%Y-%m-%d %H:%M:%S";
+
+        network = {
+          format = "{ifname}";
+          format-wifi = "W: {essid} ({signalStrength}%)";
+          format-ethernet = "E: {ifname}";
+          format-disconnected = "No network";
         };
-      };
-    };
+
+        wireplumber = {
+          format = "V: {volume}%";
+          format-muted = "V: muted ({volume}%)";
+          scroll-step = 5;
+        };
+
+        battery = {
+          format = "{status} {capacity}% {time}";
+          format-down = "No Battery";
+          format-charging = "CHR {capacity}% {time}";
+          format-plugged = "IDLE {capacity}%";
+          format-full = "FULL {capacity}%";
+          states = {
+            warning = 15;
+            critical = 5;
+          };
+        };
+
+        clock = {
+          format = "{:%Y-%m-%d %H:%M:%S}";
+          interval = 1;
+          tooltip = false;
+        };
+
+        idle_inhibitor = {
+          format = "{icon}";
+          format-icons = {
+            activated = "";
+            deactivated = "";
+          };
+          tooltip = true;
+        };
+
+        tray = {
+          icon-size = 15;
+          show-passive-items = true;
+          spacing = 5;
+        };
+      }
+    ];
+
+    style = ''
+      * {
+        border-radius: 1;
+        font-family: monospace;
+        font-size: 11px;
+        min-height: 17px;
+      }
+
+      window#waybar {
+        background: #323232;
+        color: #ffffff;
+        margin: 0px;
+        padding: 0px;
+      }
+
+      #workspaces button {
+        color: #5c5c5c;
+        min-width: 17px;
+        margin: 0px;
+        padding: 0px 0.5px;
+      }
+
+      #workspaces button:hover {
+        border: 1px solid #323232;
+      }
+
+      #workspaces button.visible {
+        background: #5f676a;
+        color: #ffffff;
+      }
+
+      #workspaces button.focused {
+        background: #285577;
+        color: #ffffff;
+        border: 1px solid #4c7899;
+      }
+
+      #workspaces button.urgent {
+        background: #900000;
+        color: #ffffff;
+        border: 1px solid #900000;
+      }
+
+      #custom-separator {
+        color: #4c4c4c;
+        margin: 0 2px;
+      }
+
+      #network {
+        color: #00ff00;
+      }
+      #network.disconnected,
+      #network.disabled {
+        color: #ff0000;
+      }
+
+      #wireplumber.sink-muted {
+        color: #ffff00;
+      }
+
+      #battery.warning {
+        color: #ffff00;
+      }
+      #battery.critical {
+        color: #ff0000;
+      }
+
+      #idle_inhibitor {
+        margin-right: 10px;
+      }
+    '';
   };
 
   services.swayidle =
