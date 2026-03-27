@@ -55,8 +55,8 @@
         "${modifier}+Tab" = "focus next";
         "${modifier}+Shift+Tab" = "focus prev";
 
-        "Alt+Tab" = "workspace next";
-        "Alt+Shift+Tab" = "workspace prev";
+        "Alt+Tab" = "workspace next_on_output";
+        "Alt+Shift+Tab" = "workspace prev_on_output";
 
         "Alt+Control+Tab" = "focus output right";
         "Alt+Control+Shift+Tab" = "focus output left";
