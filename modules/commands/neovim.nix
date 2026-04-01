@@ -135,6 +135,11 @@
           settings = {
             notify_on_error = true;
             formatters = {
+              clang-format = {
+                append_args = [
+                  "--style={BasedOnStyle: LLVM, IndentWidth: 4}"
+                ];
+              };
               typstyle = {
                 append_args = [
                   "--line-width"
