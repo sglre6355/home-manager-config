@@ -7,7 +7,6 @@
     { lib, ... }:
     {
       enable = true;
-      package = pkgs.neovim;
 
       dependencies = {
         go.packageFallback = true;

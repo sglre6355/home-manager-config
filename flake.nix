@@ -8,9 +8,8 @@
     };
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixpkgs-master.url = "github:NixOS/nixpkgs/master";
-    nixvim.url = "github:nix-community/nixvim";
-    neovim-nightly-overlay = {
-      url = "github:nix-community/neovim-nightly-overlay";
+    nixvim = {
+      url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -19,7 +18,6 @@
     {
       nixpkgs,
       nixpkgs-master,
-      neovim-nightly-overlay,
       home-manager,
       nixvim,
       ...
@@ -29,7 +27,6 @@
       pkgs = import nixpkgs {
         inherit system;
         config.allowUnfree = true;
-        overlays = [ neovim-nightly-overlay.overlays.default ];
       };
       masterPkgs = import nixpkgs-master {
         inherit system;
