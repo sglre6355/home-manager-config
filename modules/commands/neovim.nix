@@ -149,6 +149,7 @@
             };
             formatters_by_ft = {
               cpp = [ "clang-format" ];
+              cuda = [ "clang-format" ];
               go = [ "golangci-lint" ];
               html = [ "prettierd" ];
               javascript = [ "prettierd" ];
