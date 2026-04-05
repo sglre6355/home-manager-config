@@ -179,6 +179,11 @@
           enable = true;
           autoload = true;
           inlayHints = false;
+          onAttach = /* lua */ ''
+            vim.api.nvim_set_keymap("n", "<A-CR>", ":lua vim.lsp.buf.definition()<CR>", { noremap = true, silent = true })
+            vim.api.nvim_set_keymap("n", "<A-S-CR>", ":lua vim.lsp.buf.declaration()<CR>", { noremap = true, silent = true })
+            vim.api.nvim_set_keymap("n", "<A-BS>", "<C-t>", { noremap = true, silent = true })
+          '';
           servers = {
             clangd.enable = true;
             gopls = {
