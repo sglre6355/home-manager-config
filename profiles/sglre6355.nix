@@ -28,11 +28,15 @@
   home.packages = with pkgs; [
     btop
 
+    chafa
     ffmpeg
     gimp
     imagemagick
+    poppler-utils
 
     google-cloud-sdk
+
+    unar
   ];
 
   programs.git = {
