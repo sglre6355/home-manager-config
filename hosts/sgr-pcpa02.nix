@@ -12,6 +12,7 @@
 
   home.packages = with pkgs; [
     prismlauncher
+    osu-lazer-bin
   ];
 
   wayland.windowManager.sway.config = {
