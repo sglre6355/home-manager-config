@@ -10,6 +10,7 @@
 
   home.packages = with pkgs; [
     pulseaudio
+    waypipe
     wl-clipboard
   ];
 
