@@ -11,6 +11,7 @@
   home.stateVersion = "26.05";
 
   home.packages = with pkgs; [
+    audacity
     prismlauncher
     osu-lazer-bin
   ];
