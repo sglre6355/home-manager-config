@@ -39,6 +39,17 @@
     unar
   ];
 
+  programs.zsh.initContent = /* zsh */ ''
+    nix() {
+      if [[ "$1" == develop ]]; then
+        shift
+        command nix develop "$@" -c zsh
+      else
+        command nix "$@"
+      fi
+    }
+  '';
+
   programs.git = {
     enable = true;
     includes = [
