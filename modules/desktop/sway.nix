@@ -140,11 +140,14 @@
         };
 
         battery = {
-          format = "{status} {capacity}% {time}";
-          format-down = "No Battery";
+          format = "BAT {capacity}% {time}";
+          format-discharging = "BAT {capacity}% {time}";
           format-charging = "CHR {capacity}% {time}";
           format-plugged = "IDLE {capacity}%";
           format-full = "FULL {capacity}%";
+
+          format-time = "{H}h {m}m";
+
           states = {
             warning = 15;
             critical = 5;
