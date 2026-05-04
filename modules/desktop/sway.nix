@@ -58,11 +58,11 @@
         "${modifier}+Control+Shift+Right" = "move workspace to output right";
 
         "--locked XF86AudioRaiseVolume" =
-          "exec ${pkgs.pipewire}/bin/wpctl set-sink-volume @DEFAULT_SINK@ 5%+";
+          "exec ${pkgs.wireplumber}/bin/wpctl set-volume @DEFAULT_SINK@ 5%+";
         "--locked XF86AudioLowerVolume" =
-          "exec ${pkgs.pipewire}/bin/wpctl set-sink-volume @DEFAULT_SINK@ 5%-";
-        "--locked XF86AudioMute" = "exec ${pkgs.pipewire}/bin/wpctl set-mute @DEFAULT_SINK@ toggle";
-        "--locked XF86AudioMicMute" = "exec ${pkgs.pipewire}/bin/wpctl set-mute @DEFAULT_SOURCE@ toggle";
+          "exec ${pkgs.wireplumber}/bin/wpctl set-volume @DEFAULT_SINK@ 5%-";
+        "--locked XF86AudioMute" = "exec ${pkgs.wireplumber}/bin/wpctl set-mute @DEFAULT_SINK@ toggle";
+        "--locked XF86AudioMicMute" = "exec ${pkgs.wireplumber}/bin/wpctl set-mute @DEFAULT_SOURCE@ toggle";
 
         "--locked XF86AudioPlay" = "exec ${pkgs.playerctl}/bin/playerctl play-pause";
         "--locked XF86AudioNext" = "exec ${pkgs.playerctl}/bin/playerctl next";
