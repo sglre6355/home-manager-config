@@ -28,11 +28,11 @@
   home.packages = with pkgs; [
     btop
 
-    chafa
     ffmpeg
     gimp
     imagemagick
     poppler-utils
+    timg
 
     google-cloud-sdk
 
