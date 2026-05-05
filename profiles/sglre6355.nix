@@ -27,6 +27,7 @@
 
   home.packages = with pkgs; [
     btop
+    fastfetch
 
     ffmpeg
     gimp
