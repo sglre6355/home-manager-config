@@ -47,8 +47,7 @@
             inherit masterPkgs;
           };
         };
-      };
-      homeConfigurations = {
+
         SGR-PCPB01 = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
 
