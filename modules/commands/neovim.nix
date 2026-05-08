@@ -8,6 +8,8 @@
     {
       enable = true;
 
+      nixpkgs.config.allowUnfree = true;
+
       dependencies = {
         go.packageFallback = true;
       };
