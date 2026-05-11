@@ -26,6 +26,8 @@
   home.sessionPath = [ "${config.home.homeDirectory}/.local/bin" ];
 
   home.packages = with pkgs; [
+    nh
+
     btop
     fastfetch
 
