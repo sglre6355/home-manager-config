@@ -22,6 +22,7 @@
     wezterm.enableZshIntegration = true;
     starship.enableZshIntegration = true;
     direnv.enableZshIntegration = true;
+    fzf.enableZshIntegration = true;
   };
   services = {
     gpg-agent.enableZshIntegration = true;

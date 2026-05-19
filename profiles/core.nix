@@ -9,6 +9,7 @@
     ../modules/services/gpg-agent.nix
 
     ../modules/commands/bat.nix
+    ../modules/commands/fzf.nix
     ../modules/commands/neovim.nix
     ../modules/commands/tmux.nix
 
