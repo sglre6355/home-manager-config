@@ -23,6 +23,7 @@
     starship.enableZshIntegration = true;
     direnv.enableZshIntegration = true;
     fzf.enableZshIntegration = true;
+    zoxide.enableZshIntegration = true;
   };
   services = {
     gpg-agent.enableZshIntegration = true;

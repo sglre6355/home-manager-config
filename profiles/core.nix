@@ -12,6 +12,7 @@
     ../modules/commands/fzf.nix
     ../modules/commands/neovim.nix
     ../modules/commands/tmux.nix
+    ../modules/commands/zoxide.nix
 
     ../modules/development/git.nix
     ../modules/development/gh.nix
