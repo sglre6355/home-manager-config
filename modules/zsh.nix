@@ -11,9 +11,11 @@
       size = 10000000;
       ignoreAllDups = true;
     };
-    initContent = ''
+    initContent = /* zsh */ ''
       autoload -Uz select-word-style
       select-word-style bash
+
+      bindkey '^[[Z' undo # Shift+Tab
     '';
     syntaxHighlighting.enable = true;
   };
