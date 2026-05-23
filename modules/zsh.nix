@@ -35,6 +35,9 @@
       (fromTOML (
         builtins.readFile "${config.programs.starship.package}/share/starship/presets/bracketed-segments.toml"
       ))
+      {
+        gcloud.disabled = true;
+      }
     ];
   };
 }
