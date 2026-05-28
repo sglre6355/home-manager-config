@@ -30,6 +30,7 @@
           middle_emulation = "enabled";
         };
       };
+      defaultWorkspace = "workspace number 1";
       output = {
         "*" = {
           bg = "#4e4e4e solid_color";
