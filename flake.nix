@@ -32,7 +32,7 @@
     in
     {
       homeConfigurations = {
-        SGR-PCPA02 = home-manager.lib.homeManagerConfiguration {
+        "sglre6355@SGR-PCPA02" = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
 
           modules = [
@@ -45,7 +45,7 @@
           };
         };
 
-        SGR-PCPB01 = home-manager.lib.homeManagerConfiguration {
+        "sglre6355@SGR-PCPB01" = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
 
           modules = [
