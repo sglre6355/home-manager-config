@@ -37,6 +37,8 @@
     poppler-utils
     timg
 
+    ghq
+
     google-cloud-sdk
 
     unar
