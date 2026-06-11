@@ -39,6 +39,7 @@
 
     ghq
 
+    android-tools
     google-cloud-sdk
 
     unar
