@@ -18,12 +18,12 @@
 
   wayland.windowManager.sway.config = {
     output = {
-      "AOC 24B3HA2 AVKR69A005771" = {
-        mode = "1920x1080@120Hz";
+      "Acer Technologies KG271U TATSJ0018522" = {
+        mode = "2560x1440@144Hz";
         adaptive_sync = "on";
         pos = "1920 0";
       };
-      "AOC 24B3HA2 AVKR69A005233" = {
+      "YCT DP-BF162S-B Unknown" = {
         mode = "1920x1080@60Hz";
         pos = "0 0";
       };
@@ -31,7 +31,7 @@
     workspaceOutputAssign = [
       {
         workspace = "10";
-        output = "AOC 24B3HA2 AVKR69A005233";
+        output = "YCT DP-BF162S-B Unknown";
       }
     ];
   };
