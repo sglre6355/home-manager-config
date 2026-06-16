@@ -179,7 +179,6 @@
         indent-blankline.enable = true;
         lsp = {
           enable = true;
-          autoload = true;
           inlayHints = false;
           onAttach = /* lua */ ''
             vim.api.nvim_set_keymap("n", "<A-CR>", ":lua vim.lsp.buf.definition()<CR>", { noremap = true, silent = true })
