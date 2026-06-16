@@ -18,6 +18,7 @@
     ../modules/development/gh.nix
 
     ../modules/applications/firefox.nix
+    ../modules/applications/junction.nix
     ../modules/applications/wezterm.nix
   ];
 
