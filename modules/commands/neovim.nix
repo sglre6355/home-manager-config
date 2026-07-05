@@ -186,7 +186,14 @@
             vim.api.nvim_set_keymap("n", "<A-BS>", "<C-t>", { noremap = true, silent = true })
           '';
           servers = {
-            clangd.enable = true;
+            clangd = {
+              enable = true;
+              extraOptions = {
+                init_options = {
+                  fallbackFlags = [ "-std=c++23" ];
+                };
+              };
+            };
             gopls = {
               enable = true;
               packageFallback = true;
