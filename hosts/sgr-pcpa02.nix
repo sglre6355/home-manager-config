@@ -5,7 +5,7 @@
 {
   imports = [
     ../profiles/sglre6355.nix
-    ../profiles/work.nix
+    ../profiles/reazon-holdings.nix
   ];
 
   home.stateVersion = "26.05";
