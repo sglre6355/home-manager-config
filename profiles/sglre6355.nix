@@ -9,6 +9,7 @@
     ./core.nix
 
     ../modules/commands/veracrypt.nix
+    ../modules/commands/rtorrent.nix
 
     ../modules/development/claude-code.nix
     ../modules/development/devenv.nix
