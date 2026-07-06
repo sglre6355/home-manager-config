@@ -20,42 +20,37 @@
       ...
     }:
     let
-      system = "x86_64-linux";
-      pkgs = import nixpkgs {
-        inherit system;
-        config.allowUnfree = true;
-      };
-      masterPkgs = import nixpkgs-master {
-        inherit system;
-        config.allowUnfree = true;
-      };
+      mkHome =
+        { system, host }:
+        home-manager.lib.homeManagerConfiguration {
+          pkgs = import nixpkgs {
+            inherit system;
+            config.allowUnfree = true;
+          };
+
+          modules = [
+            host
+            nixvim.homeModules.nixvim
+          ];
+
+          extraSpecialArgs = {
+            masterPkgs = import nixpkgs-master {
+              inherit system;
+              config.allowUnfree = true;
+            };
+          };
+        };
     in
     {
       homeConfigurations = {
-        "sglre6355@SGR-PCPA02" = home-manager.lib.homeManagerConfiguration {
-          inherit pkgs;
-
-          modules = [
-            ./hosts/sgr-pcpa02.nix
-            nixvim.homeModules.nixvim
-          ];
-
-          extraSpecialArgs = {
-            inherit masterPkgs;
-          };
+        "sglre6355@SGR-PCPA02" = mkHome {
+          system = "x86_64-linux";
+          host = ./hosts/sgr-pcpa02.nix;
         };
 
-        "sglre6355@SGR-PCPB01" = home-manager.lib.homeManagerConfiguration {
-          inherit pkgs;
-
-          modules = [
-            ./hosts/sgr-pcpb01.nix
-            nixvim.homeModules.nixvim
-          ];
-
-          extraSpecialArgs = {
-            inherit masterPkgs;
-          };
+        "sglre6355@SGR-PCPB01" = mkHome {
+          system = "x86_64-linux";
+          host = ./hosts/sgr-pcpb01.nix;
         };
       };
     };
