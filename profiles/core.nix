@@ -1,4 +1,5 @@
 {
+  config,
   pkgs,
   ...
 }:
@@ -22,12 +23,21 @@
     ../modules/applications/wezterm.nix
   ];
 
+  home.sessionPath = [ "${config.home.homeDirectory}/.local/bin" ];
+
   home.packages = with pkgs; [
+    btop
+    fastfetch
+
     file
     jq
     ripgrep
     tealdeer
+    timg
     tree
+
+    ghq
+    nh
 
     zip
     unzip

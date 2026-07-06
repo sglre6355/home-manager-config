@@ -1,5 +1,4 @@
 {
-  config,
   lib,
   pkgs,
   ...
@@ -24,21 +23,11 @@
   home.username = lib.mkDefault "sglre6355";
   home.homeDirectory = lib.mkDefault "/home/sglre6355";
 
-  home.sessionPath = [ "${config.home.homeDirectory}/.local/bin" ];
-
   home.packages = with pkgs; [
-    nh
-
-    btop
-    fastfetch
-
     ffmpeg
     gimp
     imagemagick
     poppler-utils
-    timg
-
-    ghq
 
     android-tools
     google-cloud-sdk
