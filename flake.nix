@@ -52,6 +52,11 @@
           system = "x86_64-linux";
           host = ./hosts/sgr-pcpb01.nix;
         };
+
+        "keima_hara@m-stony" = mkHome {
+          system = "aarch64-darwin";
+          host = ./hosts/m-stony.nix;
+        };
       };
     };
 }
