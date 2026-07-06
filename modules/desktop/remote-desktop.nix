@@ -1,10 +1,15 @@
 {
+  lib,
   pkgs,
   ...
 }:
 {
-  home.packages = with pkgs; [
-    remmina
-    wayvnc
-  ];
+  home.packages =
+    with pkgs;
+    [
+      remmina
+    ]
+    ++ lib.optionals stdenv.isLinux [
+      wayvnc
+    ];
 }

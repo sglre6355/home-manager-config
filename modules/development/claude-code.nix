@@ -3,6 +3,27 @@
   pkgs,
   ...
 }:
+let
+  notificationHooks =
+    if pkgs.stdenv.isDarwin then
+      [
+        {
+          type = "command";
+          command = ''osascript -e 'display notification "Claude Code needs your attention" with title "Claude Code" sound name "Funk"' '';
+        }
+      ]
+    else
+      [
+        {
+          type = "command";
+          command = "${pkgs.libnotify}/bin/notify-send 'Claude Code' 'Claude Code needs your attention'";
+        }
+        {
+          type = "command";
+          command = "${pkgs.pipewire}/bin/pw-play --volume 10 ${pkgs.sound-theme-freedesktop}/share/sounds/freedesktop/stereo/window-attention.oga";
+        }
+      ];
+in
 {
   programs.claude-code = {
     enable = true;
@@ -12,16 +33,7 @@
         Notification = [
           {
             matcher = "";
-            hooks = [
-              {
-                type = "command";
-                command = "${pkgs.libnotify}/bin/notify-send 'Claude Code' 'Claude Code needs your attention'";
-              }
-              {
-                type = "command";
-                command = "${pkgs.pipewire}/bin/pw-play --volume 10 ${pkgs.sound-theme-freedesktop}/share/sounds/freedesktop/stereo/window-attention.oga";
-              }
-            ];
+            hooks = notificationHooks;
           }
         ];
       };
