@@ -17,7 +17,6 @@
 
     ../modules/desktop
     ../modules/applications/easyeffects.nix
-    ../modules/applications/wine.nix
   ];
 
   home.username = lib.mkDefault "sglre6355";

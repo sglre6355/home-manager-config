@@ -6,6 +6,8 @@
   imports = [
     ../profiles/sglre6355.nix
     ../profiles/reazon-holdings.nix
+
+    ../modules/applications/wine.nix
   ];
 
   home.stateVersion = "26.05";
