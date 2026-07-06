@@ -1,4 +1,5 @@
 {
+  lib,
   pkgs,
   ...
 }:
@@ -10,6 +11,21 @@
   home.packages = with pkgs; [
     bruno
     slack
+    uv
+    go
+    golangci-lint
+  ];
+
+  programs.git.includes = [
+    {
+      contents = {
+        commit.gpgSign = lib.mkForce false;
+        user = {
+          email = "keima_hara@reazon.jp";
+          name = "keima_hara";
+        };
+      };
+    }
   ];
 
   programs.google-chrome.enable = true;
