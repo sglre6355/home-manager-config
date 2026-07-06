@@ -6,6 +6,9 @@
 {
   imports = [
     ./core.nix
+
+    ../modules/development/claude-code.nix
+    ../modules/development/devenv.nix
   ];
 
   home.packages = with pkgs; [
@@ -14,6 +17,7 @@
     uv
     go
     golangci-lint
+    google-cloud-sdk
   ];
 
   programs.git.includes = [
