@@ -14,6 +14,7 @@
   home.packages = with pkgs; [
     bruno
     slack
+    bun
     uv
     go
     golangci-lint
