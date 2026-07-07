@@ -26,11 +26,6 @@
             mods = 'CTRL',
             action = wezterm.action.SendString '\x1bf',
           },
-          {
-            key = "Tab",
-            mods = "CTRL",
-            action = wezterm.action.SendString '\x1b[9;5u';
-          },
         },
       }
     '';

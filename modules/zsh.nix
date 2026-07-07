@@ -16,7 +16,7 @@
       select-word-style bash
 
       bindkey '^[[Z' undo # Shift+Tab
-      bindkey '^[[9;5u' push-line # Ctrl+Tab
+      bindkey '^[`' push-line # Alt+`
     '';
     syntaxHighlighting.enable = true;
   };
