@@ -4,6 +4,8 @@
 {
   imports = [
     ../profiles/reazon-holdings.nix
+
+    ../modules/desktop/aerospace.nix
   ];
 
   home.username = "keima_hara";
