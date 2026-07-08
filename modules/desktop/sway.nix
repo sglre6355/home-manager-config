@@ -1,4 +1,5 @@
 {
+  config,
   lib,
   pkgs,
   ...
@@ -23,7 +24,7 @@
       config = rec {
         modifier = "Mod4";
         terminal = "wezterm";
-        menu = "wofi --show drun -D key_expand=Tab";
+        menu = "${config.programs.wofi.package}/bin/wofi --show drun -D key_expand=Tab";
         input = {
           "type:touchpad" = {
             tap = "enabled";
