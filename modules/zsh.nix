@@ -22,9 +22,9 @@
   };
 
   programs = {
-    wezterm.enableZshIntegration = true;
+    wezterm.enableZshIntegration = false;
     starship.enableZshIntegration = true;
-    direnv.enableZshIntegration = true;
+    direnv.enableZshIntegration = false;
     fzf.enableZshIntegration = true;
     zoxide.enableZshIntegration = true;
   };
