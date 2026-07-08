@@ -28,6 +28,7 @@
           in
           {
             cmd-enter = "exec-and-forget open -na ${config.programs.wezterm.package}/Applications/WezTerm.app";
+            cmd-d = "exec-and-forget open -a ${pkgs.raycast}/Applications/Raycast.app";
 
             cmd-left = "${focus} left";
             cmd-down = "${focus} down";
