@@ -7,14 +7,14 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
-    nixpkgs-master.url = "github:NixOS/nixpkgs/master";
+    llm-agents.url = "github:numtide/llm-agents.nix";
     nixvim.url = "github:nix-community/nixvim";
   };
 
   outputs =
     {
       nixpkgs,
-      nixpkgs-master,
+      llm-agents,
       home-manager,
       nixvim,
       ...
@@ -34,10 +34,7 @@
           ];
 
           extraSpecialArgs = {
-            masterPkgs = import nixpkgs-master {
-              inherit system;
-              config.allowUnfree = true;
-            };
+            llmAgentsPkgs = llm-agents.packages.${system};
           };
         };
     in

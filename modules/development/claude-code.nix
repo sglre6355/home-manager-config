@@ -1,5 +1,5 @@
 {
-  masterPkgs,
+  llmAgentsPkgs,
   pkgs,
   ...
 }:
@@ -27,7 +27,7 @@ in
 {
   programs.claude-code = {
     enable = true;
-    package = masterPkgs.claude-code;
+    package = llmAgentsPkgs.claude-code;
     settings = {
       hooks = {
         Notification = [
