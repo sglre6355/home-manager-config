@@ -7,6 +7,7 @@
   config = lib.mkIf pkgs.stdenv.isDarwin {
     home.file = {
       ".config/karabiner/karabiner.json" = {
+        force = true;
         text = builtins.toJSON {
           profiles = [
             {
