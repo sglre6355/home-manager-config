@@ -16,9 +16,7 @@
       settings = {
         config-version = 2;
 
-        # Counterpart of sway's `workspaceLayout = "tabbed"`; accordion is
-        # AeroSpace's closest equivalent.
-        default-root-container-layout = "accordion";
+        default-root-container-layout = "tiles";
 
         on-focused-monitor-changed = [ "move-mouse monitor-lazy-center" ];
 
