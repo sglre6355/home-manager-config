@@ -87,5 +87,21 @@
           };
       };
     };
+
+    # The native screenshot shortcuts are symbolic hotkeys handled by the
+    # window server before AeroSpace can intercept them, so they fire in
+    # addition to the Cmd-Shift-3/4/5 bindings below. Cmd-Shift-S replaces
+    # them.
+    targets.darwin.defaults."com.apple.symbolichotkeys".AppleSymbolicHotKeys = {
+      "28" = {
+        enabled = false; # Save picture of screen (Cmd+Shift+3)
+      };
+      "30" = {
+        enabled = false; # Save picture of selected area (Cmd+Shift+4)
+      };
+      "184" = {
+        enabled = false; # Screenshot and recording options (Cmd+Shift+5)
+      };
+    };
   };
 }
