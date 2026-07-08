@@ -1,5 +1,4 @@
 {
-  lib,
   pkgs,
   ...
 }:
@@ -24,8 +23,9 @@
 
   programs.git.includes = [
     {
+      condition = "gitdir:~/ghq/github.com/reazon-hypes/";
       contents = {
-        commit.gpgSign = lib.mkForce false;
+        commit.gpgSign = false;
         user = {
           email = "keima_hara@reazon.jp";
           name = "keima_hara";
