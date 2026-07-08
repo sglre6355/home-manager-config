@@ -7,6 +7,7 @@
     ../profiles/reazon-holdings.nix
 
     ../modules/desktop/aerospace.nix
+    ../modules/desktop/karabiner.nix
   ];
 
   home.username = "keima_hara";

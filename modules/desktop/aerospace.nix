@@ -14,6 +14,8 @@
       package = null;
 
       settings = {
+        config-version = 2;
+
         # Counterpart of sway's `workspaceLayout = "tabbed"`; accordion is
         # AeroSpace's closest equivalent.
         default-root-container-layout = "accordion";
@@ -25,68 +27,64 @@
             focus = "focus --boundaries-action wrap-around-the-workspace";
           in
           {
-            alt-enter = "exec-and-forget open -na ${config.programs.wezterm.package}/Applications/WezTerm.app";
+            cmd-enter = "exec-and-forget open -na ${config.programs.wezterm.package}/Applications/WezTerm.app";
 
-            alt-j = "${focus} left";
-            alt-k = "${focus} down";
-            alt-l = "${focus} up";
-            alt-semicolon = "${focus} right";
-            alt-left = "${focus} left";
-            alt-down = "${focus} down";
-            alt-up = "${focus} up";
-            alt-right = "${focus} right";
-
-            alt-shift-j = "move left";
-            alt-shift-k = "move down";
-            alt-shift-l = "move up";
-            alt-shift-semicolon = "move right";
-            alt-shift-left = "move left";
-            alt-shift-down = "move down";
-            alt-shift-up = "move up";
-            alt-shift-right = "move right";
-
-            alt-1 = "workspace 1";
-            alt-2 = "workspace 2";
-            alt-3 = "workspace 3";
-            alt-4 = "workspace 4";
-            alt-5 = "workspace 5";
-            alt-6 = "workspace 6";
-            alt-7 = "workspace 7";
-            alt-8 = "workspace 8";
-            alt-9 = "workspace 9";
-            alt-0 = "workspace 10";
-
-            alt-shift-1 = "move-node-to-workspace 1";
-            alt-shift-2 = "move-node-to-workspace 2";
-            alt-shift-3 = "move-node-to-workspace 3";
-            alt-shift-4 = "move-node-to-workspace 4";
-            alt-shift-5 = "move-node-to-workspace 5";
-            alt-shift-6 = "move-node-to-workspace 6";
-            alt-shift-7 = "move-node-to-workspace 7";
-            alt-shift-8 = "move-node-to-workspace 8";
-            alt-shift-9 = "move-node-to-workspace 9";
-            alt-shift-0 = "move-node-to-workspace 10";
-
-            alt-f = "fullscreen";
-            alt-w = "layout accordion horizontal vertical";
-            alt-e = "layout tiles horizontal vertical";
-            alt-shift-space = "layout floating tiling";
-            alt-shift-q = "close";
-            alt-shift-c = "reload-config";
-
-            alt-shift-minus = "resize smart -50";
-            alt-shift-equal = "resize smart +50";
+            cmd-left = "${focus} left";
+            cmd-down = "${focus} down";
+            cmd-up = "${focus} up";
+            cmd-right = "${focus} right";
+            # Karabiner-Elements remaps Cmd+Tab to F18 and Cmd+Shift+Tab to F19
+            # to bypass the macOS app switcher
+            f18 = "${focus} right";
+            f19 = "${focus} left";
 
             alt-tab = "workspace --wrap-around next";
             alt-shift-tab = "workspace --wrap-around prev";
             alt-ctrl-tab = "focus-monitor --wrap-around next";
             alt-ctrl-shift-tab = "focus-monitor --wrap-around prev";
 
-            alt-ctrl-shift-left = "move-workspace-to-monitor --wrap-around prev";
-            alt-ctrl-shift-right = "move-workspace-to-monitor --wrap-around next";
+            alt-ctrl-shift-left = "move-workspace-to-monitor --wrap-around left";
+            alt-ctrl-shift-right = "move-workspace-to-monitor --wrap-around right";
+
+            cmd-shift-left = "move left";
+            cmd-shift-down = "move down";
+            cmd-shift-up = "move up";
+            cmd-shift-right = "move right";
+
+            cmd-1 = "workspace 1";
+            cmd-2 = "workspace 2";
+            cmd-3 = "workspace 3";
+            cmd-4 = "workspace 4";
+            cmd-5 = "workspace 5";
+            cmd-6 = "workspace 6";
+            cmd-7 = "workspace 7";
+            cmd-8 = "workspace 8";
+            cmd-9 = "workspace 9";
+            cmd-0 = "workspace 10";
+
+            cmd-shift-1 = "move-node-to-workspace 1";
+            cmd-shift-2 = "move-node-to-workspace 2";
+            cmd-shift-3 = "move-node-to-workspace 3";
+            cmd-shift-4 = "move-node-to-workspace 4";
+            cmd-shift-5 = "move-node-to-workspace 5";
+            cmd-shift-6 = "move-node-to-workspace 6";
+            cmd-shift-7 = "move-node-to-workspace 7";
+            cmd-shift-8 = "move-node-to-workspace 8";
+            cmd-shift-9 = "move-node-to-workspace 9";
+            cmd-shift-0 = "move-node-to-workspace 10";
+
+            cmd-f = "fullscreen";
+            cmd-w = "layout accordion horizontal vertical";
+            cmd-e = "layout tiles horizontal vertical";
+            cmd-shift-space = "layout floating tiling";
+            cmd-shift-q = "close";
+            cmd-shift-c = "reload-config";
+
+            cmd-shift-minus = "resize smart -50";
+            cmd-shift-equal = "resize smart +50";
 
             # Snipping tool
-            alt-shift-s = "exec-and-forget screencapture -i -c";
+            cmd-shift-s = "exec-and-forget screencapture -i -c";
           };
       };
     };
