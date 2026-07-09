@@ -24,13 +24,8 @@
         "Print…" = "^p";
 
         # Edit
-        "Undo" = "^z";
-        "Redo" = "^$z";
-        "Cut" = "^x";
-        "Copy" = "^c";
-        "Paste" = "^v";
-        "Paste and Match Style" = "^$v";
-        "Select All" = "^a";
+        # Cut/Copy/Paste/Paste and Match Style/Select All/Undo/Redo are handled
+        # system-wide via Karabiner (see karabiner.nix), not here.
         "Find…" = "^f";
         "Find Next" = "^g";
         "Find Previous" = "^$g";

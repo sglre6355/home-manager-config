@@ -44,7 +44,10 @@
                         from = {
                           key_code = "tab";
                           modifiers = {
-                            mandatory = [ "command" "shift" ];
+                            mandatory = [
+                              "command"
+                              "shift"
+                            ];
                             optional = [ "caps_lock" ];
                           };
                         };
@@ -53,6 +56,51 @@
                         ];
                       }
                     ];
+                  }
+                  {
+                    description = ''
+                      Remap Ctrl+A/C/V/X/Z(+Shift) to Cmd equivalents except in terminal apps
+                    '';
+                    manipulators =
+                      let
+                        # WezTerm and Terminal.app are excluded so Ctrl+A/C/V/X/Z still behave as expected in a shell.
+                        terminalApps = [
+                          "^com\\.github\\.wez\\.wezterm$"
+                          "^com\\.apple\\.Terminal$"
+                        ];
+                        remap = key: extraModifiers: {
+                          type = "basic";
+                          from = {
+                            key_code = key;
+                            modifiers = {
+                              mandatory = [ "control" ] ++ extraModifiers;
+                              optional = [ "caps_lock" ];
+                            };
+                          };
+                          to = [
+                            {
+                              key_code = key;
+                              modifiers = [ "command" ] ++ extraModifiers;
+                            }
+                          ];
+                          conditions = [
+                            {
+                              type = "frontmost_application_unless";
+                              bundle_identifiers = terminalApps;
+                            }
+                          ];
+                        };
+                      in
+                      [
+                        (remap "a" [ ])
+                        (remap "c" [ ])
+                        (remap "v" [ ])
+                        (remap "x" [ ])
+                        (remap "z" [ ])
+                        (remap "c" [ "shift" ])
+                        (remap "v" [ "shift" ])
+                        (remap "z" [ "shift" ])
+                      ];
                   }
                 ];
               };
