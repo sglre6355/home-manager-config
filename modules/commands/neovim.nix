@@ -20,7 +20,6 @@
         golangci-lint
         rumdl
         nix
-        python313Packages.flake8
       ];
 
       files = {
@@ -159,10 +158,7 @@
               markdown = [ "rumdl" ];
               nix = [ "nixfmt" ];
               protobuf = [ "buf" ];
-              python = [
-                "isort"
-                "black"
-              ];
+              python = [ "ruff" ];
               # TODO: configure nightly options
               rust = [ "rustfmt" ];
               sql = [ "sql_formatter" ];
@@ -238,7 +234,6 @@
             go = [ "golangcilint" ];
             markdown = [ "rumdl" ];
             nix = [ "nix" ];
-            python = [ "flake8" ];
           };
         };
         lualine.enable = true;
