@@ -37,6 +37,11 @@ in
           }
         ];
       };
+      statusLine = {
+        type = "command";
+        command = "${pkgs.ccusage}/bin/ccusage statusline";
+        padding = 0;
+      };
       includeCoAuthoredBy = false;
     };
   };
