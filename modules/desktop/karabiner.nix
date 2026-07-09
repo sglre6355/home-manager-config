@@ -59,7 +59,7 @@
                   }
                   {
                     description = ''
-                      Remap Ctrl+A/C/V/X/Z(+Shift) to Cmd equivalents except in terminal apps
+                      Remap Ctrl+A/C/V/X/Z(+Shift)/Enter to Cmd equivalents except in terminal apps
                     '';
                     manipulators =
                       let
@@ -100,6 +100,7 @@
                         (remap "c" [ "shift" ])
                         (remap "v" [ "shift" ])
                         (remap "z" [ "shift" ])
+                        (remap "return_or_enter" [ ])
                       ];
                   }
                 ];
