@@ -58,8 +58,8 @@
             alt-ctrl-tab = "focus-monitor --wrap-around next";
             alt-ctrl-shift-tab = "focus-monitor --wrap-around prev";
 
-            alt-ctrl-shift-left = "move-workspace-to-monitor --wrap-around left";
-            alt-ctrl-shift-right = "move-workspace-to-monitor --wrap-around right";
+            cmd-ctrl-shift-left = "move-workspace-to-monitor --wrap-around left";
+            cmd-ctrl-shift-right = "move-workspace-to-monitor --wrap-around right";
 
             cmd-shift-left = "move left";
             cmd-shift-down = "move down";
