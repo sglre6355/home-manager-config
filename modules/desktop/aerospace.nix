@@ -25,7 +25,10 @@
             focus = "focus --boundaries-action wrap-around-the-workspace";
           in
           {
-            cmd-enter = "exec-and-forget open -na ${config.programs.wezterm.package}/Applications/WezTerm.app";
+            # Karabiner-Elements remaps Cmd+Enter to F17; binding cmd-enter here
+            # would also capture the synthetic Cmd+Enter that Karabiner emits
+            # for Ctrl+Enter (e.g. to send messages in Slack)
+            f17 = "exec-and-forget open -na ${config.programs.wezterm.package}/Applications/WezTerm.app";
             cmd-d = "exec-and-forget open -a ${pkgs.raycast}/Applications/Raycast.app";
 
             cmd-left = "${focus} left";
