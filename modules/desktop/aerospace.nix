@@ -20,6 +20,19 @@
 
         on-focused-monitor-changed = [ "move-mouse monitor-lazy-center" ];
 
+        gaps = {
+          inner = {
+            horizontal = 10;
+            vertical = 10;
+          };
+          outer = {
+            left = 5;
+            bottom = 5;
+            top = 5;
+            right = 5;
+          };
+        };
+
         mode.main.binding =
           let
             focus = "focus --boundaries-action wrap-around-the-workspace";

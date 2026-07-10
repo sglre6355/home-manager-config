@@ -7,6 +7,7 @@
     ../profiles/reazon-holdings.nix
 
     ../modules/desktop/aerospace.nix
+    ../modules/desktop/jankyborders.nix
     ../modules/desktop/karabiner.nix
   ];
 
