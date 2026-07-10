@@ -37,6 +37,7 @@
     tree
 
     ghq
+    gwq
     nh
 
     zip
