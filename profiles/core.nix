@@ -25,6 +25,20 @@
 
   home.sessionPath = [ "${config.home.homeDirectory}/.local/bin" ];
 
+  programs.zsh.initContent = /* zsh */ ''
+    # cd into a ghq-managed repository
+    ch() {
+      local repo
+      repo=$(ghq list --full-path | fzf) && cd "$repo"
+    }
+
+    # cd into a gwq-managed worktree
+    cw() {
+      local worktree
+      worktree=$(gwq get) && cd "$worktree"
+    }
+  '';
+
   home.packages = with pkgs; [
     btop
     fastfetch
