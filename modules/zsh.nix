@@ -24,7 +24,7 @@
   programs = {
     wezterm.enableZshIntegration = false;
     starship.enableZshIntegration = true;
-    direnv.enableZshIntegration = false;
+    direnv.enableZshIntegration = true;
     fzf.enableZshIntegration = true;
     zoxide.enableZshIntegration = true;
   };
