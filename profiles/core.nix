@@ -32,11 +32,14 @@
       repo=$(ghq list --full-path | fzf) && cd "$repo"
     }
 
-    # cd into a gwq-managed worktree
+    # cd into a git-wt-managed worktree
     cw() {
       local worktree
-      worktree=$(gwq get) && cd "$worktree"
+      worktree=$(git-wt --json | ${pkgs.jq}/bin/jq -r '.[].path' | fzf) && cd "$worktree"
     }
+
+    # enable `git wt` directory switching
+    eval "$(git-wt --init zsh)"
   '';
 
   home.packages = with pkgs; [
@@ -51,7 +54,7 @@
     tree
 
     ghq
-    gwq
+    git-wt
     nh
 
     zip
