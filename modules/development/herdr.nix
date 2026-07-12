@@ -1,0 +1,8 @@
+{
+  ...
+}:
+{
+  programs.herdr = {
+    enable = true;
+  };
+}

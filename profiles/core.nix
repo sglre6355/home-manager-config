@@ -17,6 +17,7 @@
 
     ../modules/development/git.nix
     ../modules/development/gh.nix
+    ../modules/development/herdr.nix
 
     ../modules/applications/firefox.nix
     ../modules/applications/junction.nix
