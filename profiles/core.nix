@@ -27,13 +27,13 @@
 
   programs.zsh.initContent = /* zsh */ ''
     # cd into a ghq-managed repository
-    ch() {
+    cdr() {
       local repo
       repo=$(ghq list --full-path | fzf) && cd "$repo"
     }
 
     # cd into a git-wt-managed worktree
-    cw() {
+    cdw() {
       local worktree
       worktree=$(git-wt --json | ${pkgs.jq}/bin/jq -r '.[].path' | fzf) && cd "$worktree"
     }
