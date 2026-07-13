@@ -11,6 +11,9 @@
       size = 10000000;
       ignoreAllDups = true;
     };
+    shellAliases = {
+      ls = "ls --color=auto";
+    };
     initContent = /* zsh */ ''
       autoload -Uz select-word-style
       select-word-style bash
