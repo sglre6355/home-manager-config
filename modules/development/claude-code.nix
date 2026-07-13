@@ -62,6 +62,9 @@ in
   programs.claude-code = {
     enable = true;
     package = wrappedClaudeCode;
+    skills = {
+      herdr = "${pkgs.herdr.src}/SKILL.md";
+    };
     # Do NOT set `settings` (or `marketplaces` / MCP server disabling) here:
     # any of them makes home-manager symlink ~/.claude/settings.json into the
     # store, which breaks /model and /config persistence.
