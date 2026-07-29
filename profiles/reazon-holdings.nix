@@ -14,10 +14,12 @@
   home.packages = with pkgs; [
     bruno
     slack
+    nodejs
     bun
     uv
     go
     golangci-lint
+    buf
     google-cloud-sdk
   ];
 
