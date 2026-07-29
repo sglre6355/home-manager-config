@@ -54,6 +54,8 @@
     timg
     tree
 
+    gnumake
+
     ghq
     git-wt
     nh
