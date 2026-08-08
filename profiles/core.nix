@@ -26,6 +26,10 @@
 
   home.sessionPath = [ "${config.home.homeDirectory}/.local/bin" ];
 
+  home.shellAliases = {
+    tree = "${pkgs.tree}/bin/tree --gitignore";
+  };
+
   programs.zsh.initContent = /* zsh */ ''
     # cd into a ghq-managed repository
     cdr() {
