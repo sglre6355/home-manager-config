@@ -15,6 +15,7 @@
     slack
     (lib.lowPrio minikube)
     skaffold
+    gcc
     go
     nodejs
   ];
