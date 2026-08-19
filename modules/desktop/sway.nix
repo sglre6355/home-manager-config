@@ -9,7 +9,7 @@
     ../applications/wezterm.nix
   ];
 
-  config = lib.mkIf pkgs.stdenv.isLinux {
+  config = lib.mkIf pkgs.stdenv.hostPlatform.isLinux {
     home.packages = with pkgs; [
       pulseaudio
       waypipe

@@ -5,7 +5,7 @@
   ...
 }:
 {
-  config = lib.mkIf pkgs.stdenv.isLinux {
+  config = lib.mkIf pkgs.stdenv.hostPlatform.isLinux {
     services.easyeffects = {
       enable = true;
       preset = "default";
