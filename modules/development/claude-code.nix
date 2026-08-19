@@ -63,7 +63,7 @@ in
     enable = true;
     package = wrappedClaudeCode;
     skills = {
-      herdr = "${pkgs.herdr.src}/SKILL.md";
+      herdr = "${pkgs.herdr.src}/skills/herdr/SKILL.md";
     };
     # Do NOT set `settings` (or `marketplaces` / MCP server disabling) here:
     # any of them makes home-manager symlink ~/.claude/settings.json into the
