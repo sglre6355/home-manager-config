@@ -18,5 +18,7 @@
     gcc
     go
     nodejs
+    terraform
+    awscli2
   ];
 }
