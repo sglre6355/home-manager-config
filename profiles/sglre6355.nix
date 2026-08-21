@@ -11,6 +11,7 @@
     ../modules/commands/rtorrent.nix
 
     ../modules/development/claude-code.nix
+    ../modules/development/codex.nix
     ../modules/development/devenv.nix
     ../modules/development/kubernetes.nix
     ../modules/development/podman.nix
@@ -58,8 +59,6 @@
       }
     ];
   };
-
-  programs.codex.enable = true;
 
   programs.discord.enable = true;
 
