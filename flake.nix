@@ -50,6 +50,11 @@
           host = ./hosts/sgr-pcpb01.nix;
         };
 
+        "intern595@intern595noMacBook-Pro" = mkHome {
+          system = "aarch64-darwin";
+          host = ./hosts/intern595noMacBook-Pro.nix;
+        };
+
         "keima_hara@m-stony" = mkHome {
           system = "aarch64-darwin";
           host = ./hosts/m-stony.nix;
