@@ -7,6 +7,7 @@
   imports = [
     ./core.nix
 
+    ../modules/applications/google-chrome.nix
     ../modules/development/claude-code.nix
     ../modules/development/devenv.nix
   ];
