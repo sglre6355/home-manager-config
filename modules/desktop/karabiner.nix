@@ -4,7 +4,7 @@
   ...
 }:
 {
-  config = lib.mkIf pkgs.stdenv.isDarwin {
+  config = lib.mkIf pkgs.stdenv.hostPlatform.isDarwin {
     home.file = {
       ".config/karabiner/karabiner.json" = {
         force = true;

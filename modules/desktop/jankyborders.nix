@@ -4,7 +4,7 @@
   ...
 }:
 {
-  config = lib.mkIf pkgs.stdenv.isDarwin {
+  config = lib.mkIf pkgs.stdenv.hostPlatform.isDarwin {
     # Highlights the focused window, since macOS gives no visual cue for
     # which tiled window has focus. Colors match the kanagawa colorscheme
     # (crystal blue) used elsewhere in this config.

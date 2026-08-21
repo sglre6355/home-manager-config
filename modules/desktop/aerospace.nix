@@ -5,7 +5,7 @@
   ...
 }:
 {
-  config = lib.mkIf pkgs.stdenv.isDarwin {
+  config = lib.mkIf pkgs.stdenv.hostPlatform.isDarwin {
     programs.aerospace = {
       enable = true;
       # AeroSpace itself is installed by the Homebrew cask in system-config;
