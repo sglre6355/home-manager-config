@@ -34,13 +34,13 @@
     # cd into a ghq-managed repository
     cdr() {
       local repo
-      repo=$(ghq list --full-path | fzf) && cd "$repo"
+      repo=$(ghq list --full-path | fzf --scheme=path) && cd "$repo"
     }
 
     # cd into a git-wt-managed worktree
     cdw() {
       local worktree
-      worktree=$(git-wt --json | ${pkgs.jq}/bin/jq -r '.[].path' | fzf) && cd "$worktree"
+      worktree=$(git-wt --json | ${pkgs.jq}/bin/jq -r '.[].path' | fzf --scheme=path) && cd "$worktree"
     }
 
     # enable `git wt` directory switching
