@@ -41,7 +41,11 @@ let
       command = "${pkgs.ccusage}/bin/ccusage statusline";
       padding = 0;
     };
-    includeCoAuthoredBy = false;
+    attribution = {
+      commit = "";
+      pr = "";
+      sessionUrl = false;
+    };
   };
 
   declarativeSettingsFile = pkgs.writeText "claude-code-declarative-settings.json" (
