@@ -16,7 +16,10 @@
       wl-clipboard
     ];
 
-    i18n.inputMethod.fcitx5.waylandFrontend = true;
+    i18n.inputMethod.fcitx5 = {
+      waylandFrontend = true;
+      settings.addons.waylandim.globalSection.PersistentVirtualKeyboard = "True";
+    };
 
     wayland.windowManager.sway = {
       enable = true;
