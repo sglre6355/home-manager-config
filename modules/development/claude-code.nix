@@ -10,7 +10,7 @@ let
   declarativeSettings = {
     statusLine = {
       type = "command";
-      command = "${pkgs.ccusage}/bin/ccusage statusline";
+      command = "${llmAgentsPkgs.ccstatusline}/bin/ccstatusline";
       padding = 0;
     };
     attribution = {
