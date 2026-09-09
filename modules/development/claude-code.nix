@@ -4,38 +4,10 @@
   ...
 }:
 let
-  notificationHooks =
-    if pkgs.stdenv.hostPlatform.isDarwin then
-      [
-        {
-          type = "command";
-          command = ''osascript -e 'display notification "Claude Code needs your attention" with title "Claude Code" sound name "Funk"' '';
-        }
-      ]
-    else
-      [
-        {
-          type = "command";
-          command = "${pkgs.libnotify}/bin/notify-send 'Claude Code' 'Claude Code needs your attention'";
-        }
-        {
-          type = "command";
-          command = "${pkgs.pipewire}/bin/pw-play --volume 10 ${pkgs.sound-theme-freedesktop}/share/sounds/freedesktop/stereo/window-attention.oga";
-        }
-      ];
-
   # Injected via `--settings` so that ~/.claude/settings.json stays a regular
   # file writable by Claude Code itself (/model, /config). CLI-flag settings
   # merge on top of the user scope instead of replacing it.
   declarativeSettings = {
-    hooks = {
-      Notification = [
-        {
-          matcher = "";
-          hooks = notificationHooks;
-        }
-      ];
-    };
     statusLine = {
       type = "command";
       command = "${pkgs.ccusage}/bin/ccusage statusline";
