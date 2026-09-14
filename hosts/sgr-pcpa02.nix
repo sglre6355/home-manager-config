@@ -22,11 +22,11 @@
     output = {
       "Acer Technologies KG271U TATSJ0018522" = {
         mode = "2560x1440@144Hz";
-        pos = "1920 0";
+        pos = "0 0";
       };
       "YCT DP-BF162S-B Unknown" = {
         mode = "1920x1080@60Hz";
-        pos = "0 0";
+        pos = "320 1440";
       };
     };
     workspaceOutputAssign = [
