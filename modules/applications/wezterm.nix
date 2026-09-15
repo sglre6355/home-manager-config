@@ -16,6 +16,26 @@
             action = wezterm.action.DisableDefaultAssignment,
           },
           {
+            key = 'Tab',
+            mods = 'CTRL',
+            action = wezterm.action.DisableDefaultAssignment,
+          },
+          {
+            key = 'Tab',
+            mods = 'CTRL|SHIFT',
+            action = wezterm.action.DisableDefaultAssignment,
+          },
+          {
+            key = 't',
+            mods = 'CTRL|SHIFT',
+            action = wezterm.action.DisableDefaultAssignment,
+          },
+          {
+            key = 't',
+            mods = 'SUPER',
+            action = wezterm.action.DisableDefaultAssignment,
+          },
+          {
             key = 'LeftArrow',
             mods = 'CTRL',
             action = wezterm.action.SendString '\x1bb',
