@@ -18,6 +18,8 @@
 
       keys = {
         open_worktree = "prefix+shift+o";
+        next_workspace = "ctrl+tab";
+        previous_workspace = "ctrl+shift+tab";
       };
 
       experimental = {
