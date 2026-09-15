@@ -9,6 +9,29 @@
       return {
         automatically_reload_config = true,
         enable_tab_bar = false,
+        font = wezterm.font 'JetBrains Mono',
+        font_rules = {
+          {
+            intensity = 'Bold',
+            italic = false,
+            font = wezterm.font('JetBrains Mono', { weight = 'DemiBold' }),
+          },
+          {
+            intensity = 'Bold',
+            italic = true,
+            font = wezterm.font('JetBrains Mono', { weight = 'DemiBold', style = 'Italic' }),
+          },
+          {
+            intensity = 'Half',
+            italic = false,
+            font = wezterm.font('JetBrains Mono', { weight = 'ExtraLight' }),
+          },
+          {
+            intensity = 'Half',
+            italic = true,
+            font = wezterm.font('JetBrains Mono', { weight = 'ExtraLight', style = 'Italic' }),
+          },
+        },
         keys = {
           {
             key = 'Enter',
