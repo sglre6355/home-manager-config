@@ -40,21 +40,8 @@
           pull = {
             rebase = true;
           };
-          merge = {
-            conflictStyle = "zdiff3";
-          };
         };
       }
     ];
-  };
-
-  programs.delta = {
-    enable = true;
-    enableGitIntegration = true;
-    options = {
-      navigate = true;
-      line-numbers = true;
-      hyperlinks = true;
-    };
   };
 }
