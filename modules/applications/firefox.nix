@@ -54,6 +54,8 @@
           "browser.urlbar.suggest.trending" = false;
           "full-screen-api.warning.timeout" = 0;
           "privacy.globalprivacycontrol.enabled" = true;
+          "sidebar.revamp" = true;
+          "sidebar.verticalTabs" = true;
           "ui.key.menuAccessKeyFocuses" = false;
         };
       };
