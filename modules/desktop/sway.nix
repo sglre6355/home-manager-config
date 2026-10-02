@@ -143,6 +143,7 @@
             format = "V: {volume}%";
             format-muted = "V: muted ({volume}%)";
             scroll-step = 5;
+            on-click = "${pkgs.pwvucontrol}/bin/pwvucontrol";
           };
 
           battery = {
