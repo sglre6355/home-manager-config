@@ -84,6 +84,12 @@
           key = "<C-f>";
           options.silent = true;
         }
+        {
+          mode = "n";
+          action = "za";
+          key = "<C-CR>";
+          options.silent = true;
+        }
       ];
 
       colorschemes.kanagawa.enable = true;
